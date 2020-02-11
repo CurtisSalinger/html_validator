@@ -10,7 +10,12 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
-
+    count_open = 0
+    count_closed = 0
+    if '</' in html:
+        return True
+    else:
+        return False
     # HINT:
     # use the _extract_tags function below to generate a list of html tags without any extra text;
     # then process these html tags using the balanced parentheses algorithm from the book
