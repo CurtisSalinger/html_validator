@@ -26,7 +26,7 @@ def validate_html(html):
     else:
         return False
     """
-    
+    balanced = False
 
     tags = _extract_tags(html)
     while (len(tags) % 2 == 0):
@@ -34,7 +34,10 @@ def validate_html(html):
             return False
         else:
             tags = tags[2:-1]
-    return True
+        for i in range(len( tags)):
+            if tags[i] == tags[-i+1]:
+                balanced = True
+    return balanced
 
 
     # HINT:
