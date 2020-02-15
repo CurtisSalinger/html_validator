@@ -53,8 +53,8 @@ def _extract_tags(html):
     '''
     tags = []
     while len(html) != 0:
-        left = html.index('<')
-        right = html.index('>')
+        left = html.find('<')
+        right = html.find('>')
 
         tags.append(html[left:(right + 1)])
         html = html[(right + 1):]
