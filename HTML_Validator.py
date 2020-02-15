@@ -30,7 +30,7 @@ def validate_html(html):
 
     tags = _extract_tags(html)
     while (len(tags) % 2 == 0):
-        if tags[1][1:] not in tags[-1][2:]:
+        if tags[0][1:] not in tags[-1][2:]:
             return False
         else:
             tags = tags[2:-1]
