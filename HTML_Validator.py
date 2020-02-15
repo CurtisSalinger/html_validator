@@ -28,7 +28,7 @@ def validate_html(html):
     """
 
     lst = _extract_tags(html)
-    for tag in tags:
+    while (len(tags) % 2 == 0):
         if tag[1:] not in tags[-1][2:]:
             return False
         else:
