@@ -61,6 +61,7 @@ def _extract_tags(html):
             break
         tags.append(html[left:(right + 1)])
         html = html[(right + 1):]
-
+        
+    return tags
 
 
