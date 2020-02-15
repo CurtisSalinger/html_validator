@@ -49,8 +49,11 @@ def validate_html(html):
     balanced = True
     if len(tags) == 0 or len(tags) % 2 == 1:
         return False
-    for i in range(len( tags)): 
-        if tags[i] != tags[-i+1]:
+    for i in range(len( tags)//2): 
+        print( 'tag i = ' , tags[i][1:])
+        print( 'tag -i + 1 = ' , tags[-(i+1)][2:])
+        if tags[i][1:] != tags[-(i+1)][2:]:
+            print('Into False Statement')
             balanced = False
     return balanced
 
