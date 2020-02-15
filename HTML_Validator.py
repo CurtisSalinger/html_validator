@@ -26,18 +26,36 @@ def validate_html(html):
     else:
         return False
     """
-    balanced = False
+    """
+    balanced = true
 
     tags = _extract_tags(html)
     while (len(tags) % 2 == 0):
         if tags[0][1:] not in tags[-1][2:]:
-            return False
+            print("tags when false = ")
+            return false
         else:
             tags = tags[2:-1]
+            print("else line = ", tags)
         for i in range(len( tags)):
-            if tags[i] == tags[-i+1]:
-                balanced = True
+            if tags[i] != tags[-i+1]:
+                balanced = false
     return balanced
+    """
+
+
+
+
+    balanced = True
+    if len(tags) == 0 or len(tags) % 2 == 1:
+        return False
+    for i in range(len( tags)): 
+        if tags[i] != tags[-i+1]:
+            balanced = False
+    return balanced
+
+
+
 
 
     # HINT:
