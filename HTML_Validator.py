@@ -26,7 +26,8 @@ def validate_html(html):
     else:
         return False
     """
-
+    
+    """
     tags = _extract_tags(html)
     while (len(tags) % 2 == 0):
         if tags[1][1:] not in tags[-1][2:]:
@@ -34,6 +35,7 @@ def validate_html(html):
         else:
             tags = tags[2:-1]
     return True
+    """
 
     # HINT:
     # use the _extract_tags function below to generate a list of html tags without any extra text;
@@ -55,7 +57,8 @@ def _extract_tags(html):
     while len(html) != 0:
         left = html.find('<')
         right = html.find('>')
-
+        if left == -1 or right == -1:
+            break
         tags.append(html[left:(right + 1)])
         html = html[(right + 1):]
 
