@@ -45,7 +45,7 @@ def validate_html(html):
 
 
 
-
+    tags = _extract_tags(html)
     balanced = True
     if len(tags) == 0 or len(tags) % 2 == 1:
         return False
