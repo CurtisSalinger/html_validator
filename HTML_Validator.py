@@ -9,23 +9,23 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
-    """
     lst = []
     for tag in _extract_tags(html):
-        char = html[i]
-        if char in "<" :
-            lst.append(char)
+        if '/' not in tag:
+            lst.append(tag)
         else:
             if lst == []:
                 balanced = False
             else:
                 top = lst.pop()
-                if not 
+                if top[2:]  not in tag[1:]:
+                    balanced = False
     if balanced and lst==[]:
         return True
     else:
         return False
-    """
+    
+    
     """
     balanced = true
 
@@ -44,10 +44,10 @@ def validate_html(html):
     """
 
 
-
+    """
     tags = _extract_tags(html)
     balanced = True
-    if len(tags) == 0 or len(tags) % 2 == 1:
+    if len(tags) % 2 == 1:
         return False
     for i in range(len( tags)//2): 
         print( 'tag i = ' , tags[i][1:])
@@ -55,9 +55,10 @@ def validate_html(html):
         if tags[i][1:] != tags[-(i+1)][2:]:
             print('Into False Statement')
             balanced = False
+        tags
     return balanced
 
-
+    """
 
 
 
