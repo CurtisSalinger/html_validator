@@ -25,44 +25,6 @@ def validate_html(html):
         return True
     else:
         return False
-    
-    
-    """
-    balanced = true
-
-    tags = _extract_tags(html)
-    while (len(tags) % 2 == 0):
-        if tags[0][1:] not in tags[-1][2:]:
-            print("tags when false = ")
-            return false
-        else:
-            tags = tags[2:-1]
-            print("else line = ", tags)
-        for i in range(len( tags)):
-            if tags[i] != tags[-i+1]:
-                balanced = false
-    return balanced
-    """
-
-
-    """
-    tags = _extract_tags(html)
-    balanced = True
-    if len(tags) % 2 == 1:
-        return False
-    for i in range(len( tags)//2): 
-        print( 'tag i = ' , tags[i][1:])
-        print( 'tag -i + 1 = ' , tags[-(i+1)][2:])
-        if tags[i][1:] != tags[-(i+1)][2:]:
-            print('Into False Statement')
-            balanced = False
-        tags
-    return balanced
-
-    """
-
-
-
     # HINT:
     # use the _extract_tags function below to generate a list of html tags without any extra text;
     # then process these html tags using the balanced parentheses algorithm from the book
