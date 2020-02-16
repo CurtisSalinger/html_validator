@@ -9,6 +9,7 @@ def validate_html(html):
     >>> validate_html('<strong>example')
     False
     '''
+    balanced = True
     lst = []
     for tag in _extract_tags(html):
         if '/' not in tag:
